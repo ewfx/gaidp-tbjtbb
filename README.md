@@ -1,60 +1,40 @@
-# 🚀 Project Name
+# Financial Data Validation System
 
-## 📌 Table of Contents
-- [Introduction](#introduction)
-- [Demo](#demo)
-- [Inspiration](#inspiration)
-- [What It Does](#what-it-does)
-- [How We Built It](#how-we-built-it)
-- [Challenges We Faced](#challenges-we-faced)
-- [How to Run](#how-to-run)
-- [Tech Stack](#tech-stack)
-- [Team](#team)
+## Overview
+This project is a **Regulatory Reporting Validation System** that uses a combination of rule-based validation and AI-driven anomaly detection to ensure financial dataset integrity. It leverages a **lightweight open-source language model (FLAN-T5)** to generate validation rules and **Isolation Forest** to detect anomalies.
 
----
+## Features
+- **Automated Validation Rule Generation**: Uses an LLM to generate and explain financial validation rules.
+- **Rule-Based Data Validation**: Checks for missing values, invalid entries, and negative values where applicable.
+- **AI-Powered Anomaly Detection**: Detects outliers in financial data using **Isolation Forest**.
+- **Detailed Reporting**: Generates a **Word report** summarizing the errors, anomalies, and validation rules.
 
-## 🎯 Introduction
-A brief overview of your project and its purpose. Mention which problem statement are your attempting to solve. Keep it concise and engaging.
+## Prerequisites
+Before running the script, install the required dependency:
+```sh
+pip install python-docx
+```
 
-## 🎥 Demo
-🔗 [Live Demo](#) (if applicable)  
-📹 [Video Demo](#) (if applicable)  
-🖼️ Screenshots:
+## Running the Code in Google Colab
+1. **Upload your financial dataset** (CSV or Excel file) to Google Colab.
+2. **Run the script** and provide the file path when prompted.
 
-![Screenshot 1](link-to-image)
+```sh
+📂 Enter the path to the CSV/Excel file: /content/myfile.xlsx
+```
 
-## 💡 Inspiration
-What inspired you to create this project? Describe the problem you're solving.
+## Expected Output
+- A validation report (`validation_report.docx`) with:
+  - **Generated validation rules** and explanations.
+  - **Errors found in the dataset** (missing values, incorrect data types, etc.).
+  - **Anomaly descriptions** with specific details on suspicious values.
 
-## ⚙️ What It Does
-Explain the key features and functionalities of your project.
+## Example Anomaly Output
+```
+🚨 Row 12 is an anomaly. Suspicious values: Total_Assets: 50,000,000, Net_Profit: -5,000,000
+🚨 Row 27 is an anomaly. Suspicious values: Liabilities: 200,000,000
+```
 
-## 🛠️ How We Built It
-Briefly outline the technologies, frameworks, and tools used in development.
-
-## 🚧 Challenges We Faced
-Describe the major technical or non-technical challenges your team encountered.
-
-## 🏃 How to Run
-1. Clone the repository  
-   ```sh
-   git clone https://github.com/your-repo.git
-   ```
-2. Install dependencies  
-   ```sh
-   npm install  # or pip install -r requirements.txt (for Python)
-   ```
-3. Run the project  
-   ```sh
-   npm start  # or python app.py
-   ```
-
-## 🏗️ Tech Stack
-- 🔹 Frontend: React / Vue / Angular
-- 🔹 Backend: Node.js / FastAPI / Django
-- 🔹 Database: PostgreSQL / Firebase
-- 🔹 Other: OpenAI API / Twilio / Stripe
-
-## 👥 Team
-- **Your Name** - [GitHub](#) | [LinkedIn](#)
-- **Teammate 2** - [GitHub](#) | [LinkedIn](#)
+## Notes
+- Works best with structured financial data.
+- Can be extended with additional rule sets for compliance.
